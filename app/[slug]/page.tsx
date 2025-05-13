@@ -6,11 +6,21 @@ import { SetStateAction, useEffect, useState, ReactNode } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
-export default function Home() {
+interface element {
+  type: string;
+  value: string;
+}
+
+interface section {
+  title: string;
+  elements: element[];
+}
+
+export function Home() {
   const { slug } = useParams();
 
   const [s, setS] = useState<string>("");
-  const [sections, setSections] = useState<any[]>([]);
+  const [sections, setSections] = useState<section[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +34,7 @@ export default function Home() {
     };
 
     fetchData();
-  }, []);
+  }, [slug]);
 
   useEffect(() => {
     const headerMatch = /# (.+)/g;
@@ -33,7 +43,7 @@ export default function Home() {
     const underscoreMatch = /__(.*?)__/g;
     const shinyMatch = /\$\$(.*?)\$\$/g;
 
-    const sections: SetStateAction<any[]> = [];
+    const sections: SetStateAction<section[]> = [];
     const headers = [...s.matchAll(headerMatch)];
     headers.forEach((header, index) => {
       const start = header.index! + header[0].length;
@@ -57,7 +67,7 @@ export default function Home() {
           .replace(shinyMatch, '<span class="shiny">$1</span>');
 
         return { type: "paragraph", value: line };
-      }).filter(Boolean);
+      }).filter((element): element is element => element !== null);
 
       sections.push({
         title: header[1],
@@ -113,7 +123,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               {sections.map((section, index) => (
                 <Section title={section.title} key={section.title} id={`section-${section.title}`}>
-                  {section.elements.map((element: { type: string; value: string }, subIndex: number) => (
+                  {section.elements.map((element: element, subIndex: number) => (
                     element.type === "paragraph" ?
                       <Paragraph key={`${index} + ${subIndex}`}><span dangerouslySetInnerHTML={{ __html: element.value }} /></Paragraph> :
 
@@ -150,7 +160,7 @@ function Category({ name }: { name: string; }) {
   )
 }
 
-function Section({ title, children, id }: { title: string, children: any, id: string }) {
+function Section({ title, children, id }: { title: string, children: ReactNode, id: string }) {
   return (
     <div className="flex flex-col gap-2" id={id}>
       <h1 className="text-xl font-semibold">{title}</h1>
