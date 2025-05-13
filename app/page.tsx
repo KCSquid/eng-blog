@@ -1,6 +1,6 @@
 'use client'
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  window.location.href = "/home";
-  return null;
+  redirect("/home");
 }

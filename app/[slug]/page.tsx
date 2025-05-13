@@ -102,15 +102,15 @@ export default function Home() {
       <main className="flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <h1 className="text-4xl/8 font-bold">The Marrow Thieves</h1>
-            <p className="text-neutral-700 text-base">A gripping tale of survival and resilience in a dystopian world.</p>
+            <h1 className="sm:text-4xl/8 text-3xl/8 font-bold">The Marrow Thieves</h1>
+            <p className="text-neutral-700 sm:text-base text-sm">A gripping tale of survival and resilience in a dystopian world.</p>
           </div>
         </div>
         <div>
           <Image src="https://hachette.imgix.net/books/9781913090012.jpg?auto=compress&w=2048&h=1024&fit=crop&fm=jpg" unoptimized width={2048} height={1024} alt="title image" className="w-full aspect-video object-top object-cover rounded-sm border border-neutral-300" />
         </div>
         <div className="flex jusify-between w-full gap-12">
-          <div className="flex flex-col gap-3 min-w-1/3 sticky self-start top-12">
+          <div className="sm:flex hidden flex-col gap-3 min-w-1/3 sticky self-start top-12">
             <div className="flex gap-2 items-center mb-4">
               <Image src="/pfp.jpg" width={64} height={64} alt="me" className="rounded-full w-8" />
               <p className="italic text-sm">By Jahvon Cockburn</p>
@@ -126,10 +126,8 @@ export default function Home() {
                   {section.elements.map((element: element, subIndex: number) => (
                     element.type === "paragraph" ?
                       <Paragraph key={`${index} + ${subIndex}`}><span dangerouslySetInnerHTML={{ __html: element.value }} /></Paragraph> :
-
                       element.type === "jotnote" ?
                         <Jotnote key={`${index} + ${subIndex}`}>{element.value}</Jotnote> :
-
                         <BlogImage key={`${index} + ${subIndex}`} src={element.value} />
                   ))}
                 </Section>
