@@ -16,7 +16,7 @@ interface section {
   elements: element[];
 }
 
-export function Home() {
+export default function Home() {
   const { slug } = useParams();
 
   const [s, setS] = useState<string>("");
