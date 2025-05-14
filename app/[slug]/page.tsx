@@ -9,6 +9,7 @@ import Link from "next/link";
 interface element {
   type: string;
   value: string;
+  doubleIndent?: boolean;
 }
 
 interface section {
@@ -36,28 +37,63 @@ export default function Home() {
     fetchData();
   }, [slug]);
 
+  const [meta, setMeta] = useState<{ title: string; description: string; image: string }>({
+    title: "",
+    description: "",
+    image: "",
+  });
+
   useEffect(() => {
+    const frontmatterRegex = /^---\s*([\s\S]*?)\s*---/;
+    const match = s.match(frontmatterRegex);
+
+    let title = "";
+    let description = "";
+    let image = "";
+
+    let content = s;
+
+    if (match) {
+      const fm = match[1];
+      title = fm.match(/title:\s*(.*)/)?.[1]?.trim() || "";
+      description = fm.match(/description:\s*(.*)/)?.[1]?.trim() || "";
+      image = fm.match(/image:\s*(.*)/)?.[1]?.trim() || "";
+      content = s.replace(frontmatterRegex, "").trim();
+    }
+
+    setMeta({ title, description, image });
+
     const headerMatch = /# (.+)/g;
+    const urlMatch = /<+([^|]+)\s*\|\s*(https?:\/\/[^>]+)>/g;
     const boldMatch = /\*\*(.*?)\*\*/g;
     const italicMatch = /\*(.*?)\*/g;
     const underscoreMatch = /__(.*?)__/g;
     const shinyMatch = /\$\$(.*?)\$\$/g;
 
     const sections: SetStateAction<section[]> = [];
-    const headers = [...s.matchAll(headerMatch)];
+    const headers = [...content.matchAll(headerMatch)];
     headers.forEach((header, index) => {
       const start = header.index! + header[0].length;
-      const end = headers[index + 1]?.index || s.length;
-      const content = s.slice(start, end).trim();
+      const end = headers[index + 1]?.index || content.length;
+      const sectionContent = content.slice(start, end).trim();
 
-      const elements = content.split("\n").map((line) => {
+      const elements = sectionContent.split("\n").map((line) => {
         line = line.trim();
         if (!line) return null;
         if (line.startsWith("[")) {
           return { type: "image", value: line.slice(1, -1) || "" };
         }
+        if (line.startsWith("-- ")) {
+          return { type: "jotnote", value: line.slice(3) || "", doubleIndent: true };
+        }
         if (line.startsWith("- ")) {
-          return { type: "jotnote", value: line.slice(2) || "" };
+          return { type: "jotnote", value: line.slice(2) || "", doubleIndent: false };
+        }
+        if (urlMatch.test(line)) {
+          const replacedLine = line.replace(urlMatch,
+            (_, name, url) => `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${name.trim()}</a>`
+          );
+          return { type: "paragraph", value: replacedLine };
         }
 
         line = line
@@ -78,7 +114,8 @@ export default function Home() {
     setSections(sections);
   }, [s]);
 
-  if (!s) {
+
+  if (!s || !meta.image) {
     return (
       <div>
         <div className="flex items-center justify-center w-screen h-screen">
@@ -102,12 +139,12 @@ export default function Home() {
       <main className="flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <h1 className="sm:text-4xl/8 text-3xl/8 font-bold">The Marrow Thieves</h1>
-            <p className="text-neutral-700 sm:text-base text-sm">A gripping tale of survival and resilience in a dystopian world.</p>
+            <h1 className="sm:text-4xl/8 text-3xl/8 font-bold">{meta.title}</h1>
+            <p className="text-neutral-700 sm:text-base text-sm">{meta.description}</p>
           </div>
         </div>
         <div>
-          <Image src="https://hachette.imgix.net/books/9781913090012.jpg?auto=compress&w=2048&h=1024&fit=crop&fm=jpg" unoptimized width={2048} height={1024} alt="title image" className="w-full aspect-video object-top object-cover rounded-sm border border-neutral-300" />
+          <Image src={meta.image} unoptimized width={2048} height={1024} alt="title image" className="w-full aspect-video object-center object-cover rounded-sm border border-neutral-300" />
         </div>
         <div className="flex jusify-between w-full gap-12">
           <div className="sm:flex hidden flex-col gap-3 min-w-1/3 sticky self-start top-12">
@@ -127,8 +164,9 @@ export default function Home() {
                     element.type === "paragraph" ?
                       <Paragraph key={`${index} + ${subIndex}`}><span dangerouslySetInnerHTML={{ __html: element.value }} /></Paragraph> :
                       element.type === "jotnote" ?
-                        <Jotnote key={`${index} + ${subIndex}`}>{element.value}</Jotnote> :
-                        <BlogImage key={`${index} + ${subIndex}`} src={element.value} />
+                        <Jotnote key={`${index} + ${subIndex}`} doubleIndent={element.doubleIndent}>{element.value}</Jotnote> :
+                        element.type === "url" ? <span dangerouslySetInnerHTML={{ __html: element.value }} /> :
+                          <BlogImage key={`${index} + ${subIndex}`} src={element.value} />
                   ))}
                 </Section>
               ))}
@@ -141,7 +179,7 @@ export default function Home() {
   );
 }
 
-function Category({ name }: { name: string; }) {
+function Category({ name }: { name: string }) {
   return (
     <div className="flex flex-col w-full gap-3 group hover:cursor-pointer" onClick={() => {
       const section = document.getElementById(`section-${name}`);
@@ -153,7 +191,7 @@ function Category({ name }: { name: string; }) {
         <h1 className="text-base font-semibold">{name}</h1>
         <ArrowRight className="-translate-x-2 group-hover:translate-x-0 transition-transform duration-300" />
       </div>
-      <div className="w-[10%] h-[1.5px] bg-black group-hover:w-full transition-all duration-300"></div>
+      <div className={`w-1/10 h-[1.5px] bg-black group-hover:w-full transition-all duration-300`}></div>
     </div>
   )
 }
@@ -175,11 +213,13 @@ function Paragraph({ children }: { children: ReactNode; }) {
   )
 }
 
-function Jotnote({ children }: { children: ReactNode; }) {
+function Jotnote({ children, doubleIndent }: { children: ReactNode; doubleIndent?: boolean }) {
   return (
-    <div className="flex items-start gap-2">
-      <div className="w-2 h-2 flex-shrink-0 rounded-full bg-black mt-2"></div>
-      <p className="text-base text-neutral-700 flex-1">{children}</p>
+    <div className="flex items-start gap-2 ml-6">
+      <div
+        className={`w-1.5 h-1.5 flex-shrink-0 rounded-full mt-2 border ${doubleIndent ? "border-black ml-12" : "bg-black border-transparent"}`}
+      ></div>
+      <p className="text-sm text-neutral-700 flex-1">{children}</p>
     </div>
   );
 }

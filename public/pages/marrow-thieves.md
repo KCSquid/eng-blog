@@ -1,5 +1,11 @@
+---
+title: The Marrow Thieves
+description: A gripping tale of survival and resilience in a dystopian world.
+image: https://hachette.imgix.net/books/9781913090012.jpg?auto=compress&w=2048&h=1024&fit=crop&fm=jpg
+---
+
 # Introduction
-Welcome to the home page of my blog. Here, you will learn all about the book "The Marrow Thieves", a book I read for my grade 10 English class. $$Miigwetch$$, ("thank you") for joining us
+Welcome to the home page of my Marrow Thieves blog. Here, you will learn all about the book "The Marrow Thieves", a book I read for my grade 10 English class. $$Miigwetch$$, ("thank you") for joining me.
 
 # Origins and Author
 The Marrow Thieves is a dystopian novel with themes of survival, resilience, identity and a need for community. It is written by the Canadian author Cherie Dimaline. Dimaline is a Métis author most notably known for this book. Her cultural heritage is heavily used to create a compelling story that delivers rich emotions to readers. She now resides in Toronto as part of the Georgian Bay Métis Council.
