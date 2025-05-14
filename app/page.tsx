@@ -26,18 +26,6 @@ export default function Home() {
     get();
   }, []);
 
-  const clean = (dirty: string[]) => {
-    const cleanPages = dirty.map((p: string) =>
-      p
-        .replace(/^\/?pages\//, '')
-        .replace(/\.md$/, '')
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' '))
-
-    return cleanPages
-  }
-
   const dirty = (clean: string) => {
     return clean
       .toLowerCase()
