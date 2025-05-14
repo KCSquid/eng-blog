@@ -160,14 +160,58 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               {sections.map((section, index) => (
                 <Section title={section.title} key={section.title} id={`section-${section.title}`}>
-                  {section.elements.map((element: element, subIndex: number) => (
-                    element.type === "paragraph" ?
-                      <Paragraph key={`${index} + ${subIndex}`}><span dangerouslySetInnerHTML={{ __html: element.value }} /></Paragraph> :
-                      element.type === "jotnote" ?
-                        <Jotnote key={`${index} + ${subIndex}`} doubleIndent={element.doubleIndent}>{element.value}</Jotnote> :
-                        element.type === "url" ? <span dangerouslySetInnerHTML={{ __html: element.value }} /> :
-                          <BlogImage key={`${index} + ${subIndex}`} src={element.value} />
-                  ))}
+                  {(() => {
+                    const elements = section.elements;
+                    const result: ReactNode[] = [];
+                    let i = 0;
+                    while (i < elements.length) {
+                      const element = elements[i];
+                      switch (element.type) {
+                        case "image":
+                          if (elements[i + 1]?.type === "image") {
+                            result.push(
+                              <div className="flex gap-4 my-4" key={`images-row-${index}-${i}`}>
+                                <BlogImage key={`${index}-${i}`} src={element.value} />
+                                <BlogImage key={`${index}-${i + 1}`} src={elements[i + 1].value} />
+                              </div>
+                            );
+                            i += 2;
+                          } else {
+                            result.push(
+                              <BlogImage key={`${index}-${i}`} src={element.value} />
+                            );
+                            i += 1;
+                          }
+                          break;
+                        case "paragraph":
+                          result.push(
+                            <Paragraph key={`${index}-${i}`}>
+                              <span dangerouslySetInnerHTML={{ __html: element.value }} />
+                            </Paragraph>
+                          );
+                          i += 1;
+                          break;
+                        case "jotnote":
+                          result.push(
+                            <Jotnote key={`${index}-${i}`} doubleIndent={element.doubleIndent}>
+                              {element.value}
+                            </Jotnote>
+                          );
+                          i += 1;
+                          break;
+                        case "url":
+                          result.push(
+                            <span key={`${index}-${i}`} dangerouslySetInnerHTML={{ __html: element.value }} />
+                          );
+                          i += 1;
+                          break;
+                        default:
+                          i += 1;
+                          break;
+                      }
+                    }
+                    return result;
+                  })()}
                 </Section>
               ))}
             </div>

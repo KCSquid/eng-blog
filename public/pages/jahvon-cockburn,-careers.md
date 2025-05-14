@@ -8,6 +8,8 @@ image: https://kcsquid.xyz/assets/pfp.jpg
 $$All About Me$$
 Hey, welcome to my personal blog site for my civics & careers class. My name is Jahvon Cockburn, I am 15 years old and I'm attending high school in grade 10. Growing up in multiple cities, I've been exposed to multiple languages (mainly both English and French) through diverse environments. These expierences have enriched my background and given me the opportunity to find new interests and turn me into who I am today. My biggest interest, computers, started early in my life during just the second grade. The computer program by MIT, "Scratch", sparked a deep enthusiasm for coding that continues to grow as I get older and learn more. I learn best with visual and kinesthetic styles, which help me at my very motivated, curious, and opportunistic personality. I aim to continue to grow personally and academically in the coming years.
 
+[https://images.unsplash.com/photo-1488590528505-98d2b5aba04b]
+
 $$Personality$$
 After taking the Myers-Briggs 16 Personalities test, I have concluded that I have the type ENTP-A (Assertive, Extraverted, Intuitive, Thinking, Perceiving). Intellectual and creative problem solving challenges are all very enjoyable for me, and help me thrive to become better, especially when related to technology (or more specifically coding). Sharing my ideas is easy for me with my natural outgoing and confident nature, but it may lead to me being **too** passionate or blunt when I debate with others. I'm always energetic and enthusiastic when faced with new challenges or ideas, but if I'm **overly** passionate, I'll come off as insensitive about some topics. Overall, I find great strength that prepare me for my future innovtive, strategical, and creative careers, but I also know my weaknesses and how I can work on myself. 
 
@@ -34,6 +36,9 @@ $$Awards and Certifications$$
 - 🏆 Oware Tournament Champion – My school board's Oware tournament. I ended up victorious over a board-wide contest of 60 students.
 
 - 📜 Certificate of Distinction – from the University of Waterloo’s Canadian Computing Competition (CCC), recognizing high achievement in programming skills. Top 25%.
+
+[/leader-board.jpg]
+[/blog.jpg]
 
 $$Facts / Summary$$
 - Self taught coder - learned at a very young age
@@ -82,6 +87,8 @@ Throughout my way leading up to this journey and during it itself, I am presente
 
 *Each of these opportunities will help me grow my skills as training before the field, expand my network, and prepare for greater success in my technology career.*
 
+[https://miro.medium.com/v2/1*NmgnEX0axw_XKzZQPEyJNQ.jpeg]
+
 # Pathway Two - Law
 $$Brief Note$$
 I'll follow a very similar structure to pathway one in terms of sections and wording, with my individual information updated.
@@ -108,6 +115,8 @@ Again, unlike other majors, law is no "one-step process". First I'll need an und
 After I have an undergraduate degree, I can write my LSAT (Law School Admission Test), a common test in Canada and the United States of America. If I pass, I can apply to Law School (eg. JD at UofT or Osgoode at York).
 
 Finally, after having all my certifications, I must become licensed. I'll take the "Bar Exam" and do my "articling" (working under a licensed lawyer for ~12 months.)
+
+[https://www.osgoode.yorku.ca/wp-content/uploads/2022/06/Arriving-DSC_0580_H.jpg]
 
 $$Fees?$$
 - $156 base fee for OUAC, 3 programs.
@@ -170,6 +179,8 @@ As a resident in the GTA, this scholarship could be useful to me: "We believe th
 
 *Both of these amazing opportunities are useful and available to me should I need them.*
 
+[https://images.unsplash.com/photo-1676278746109-b65a60f393b0]
+
 $$Residence$$
 Staying at home and moving out are both viable options for those who can afford it, and of course there's pros and cons to everything. From my view, moving out is best.
 
@@ -193,8 +204,88 @@ Staying at home and moving out are both viable options for those who can afford 
 -- manage all chores and other household tasks (time consuming)
 -- may make you feel lonely or homesick if this is your first time alone or you're new.
 
-# Starting Career (Job)
-e
+# Starting Career (Computer Science)
+$$Average Salary & Wage$$
+The salary for a computer science degree can vary, but for most people the salary and wage is high. 
 
-# Life Goals
-f
+The lowest division of wages is __$23,500 - $44,499__ for the bottom 20% with a wage of __$22.50/h__. The 90th percentile is a huge jump to __$222,000__ at __$106/h__, with the rest being outliers. The average salary in Ontario for a computer science degree is __$102,643__ at __$49/h__.
+
+$$Duties$$
+As a software engineer or developer, my main duties would vary depending on the company and field, but in general they would include:
+
+- Designing, writing, and testing the code for applications, websites, or systems.
+- Working with others on a team to define project reqiurements and affectively create strong solutions for clients.
+- Debugging and troubleshooting my own or other people's code.
+- Keeping up to date with new (work related) technology and frameworks to be modern.
+- Mentoring junior developers (new workers) if I have high levels of experience.
+
+$$Environment$$
+Most jobs in the computer science field allow hybrid or fully remote working. In simple terms, this means that I can work from both home and in the office during mixed days of the week. Remote working has many perks, though so does office. For example:
+
+**Remote Work**
+- Pros
+-- flexible schedule and location so I can work anywhere I want with internet access (more comfortable).
+-- no commute, wake up late and still be efficient.
+-- better work-life balance so if I ever have a family I can balance my time better.
+- Cons
+-- depending on how you work, there can be more distractions at home (though I find there's less personally.)
+-- harder to separate work and personal life (eg. work can leak into home time more often.)
+
+**In-Person Work**
+- Pros
+-- easier to collaborate and talk with other team members
+-- strong separation between work and home
+-- networking and social opportunity
+- Cons
+-- commute to work is expensive and time consuming depending on location (eg. you live far away).
+-- less flexible for your schedule and location
+-- less distractions depending on how you work
+
+[https://images.unsplash.com/photo-1497032628192-86f99bcd76bc]
+
+$$Potential Stress$$
+Computer science can be a stressful degree to earn and includes stressful work. One stress I might encounter is having tight deadlines and a high workload. Most projects for clients have very strict deadlines as everything needs to be completed for something else. Longer hours and extra pressure to deliver these results well, especially in scenarios where you find bugs, are both common factors to most workers. Keeping up with new and rapidly changing technology is also a common issue. In this new *"era of AI"*, things change a lot. New programming langauges, frameworks, and tools are all necessary to stay up to date and be modern so you don't risk losing your job to someone better.
+
+<!---
+Notes to Self:
+
+- Make connections between tabs 2 or 3 to your selected job.
+- Any additional certifications to fulfill the requirements for this job.
+--->
+
+# Life Goals - A 10 Year Plan
+$$Introduction$$
+Now that you know all about me and how I'm planning out my future, I've devised a 10 year plan to guide me along my journey. I'll talk about various topics like my work, travel, family, and finances. Enjoy!
+
+$$Career$$
+For the first **one to three years** of my career, I'll be a junior developer. This just means I'm new to the field and have much to learn from others. I aim to work at a tech company (or startup if logical), focusing on building my skills in the most modern technologies so I'm future-ready. Working with teams, building projects, and learning new tools will all give me **important** real world experience that is required for my sustainable future. Depending on where I am in a few years, I'll decide between front-end or back-end coding, or even both if I can handle it.
+
+After those years, at approximately **three to six years** into my future, I'll be a "mid level" developer where I've gained some expierence and I'm ready to jump into more responsibilities and opportunities. I'll focus on continuing to build my portfolio and do hackathons to build a resume.
+
+My years of preparation before will make me ready for my highest level of work where I'll be a sort of "specialist" or "senior" as most people call it (**six to 10 years**). I'll be working on larger scale projects and likely leading a team (or a few).
+
+$$Travel$$
+I do love Canada, but I might not necessarily want to live here forever. Over the years I've considered different countries or provinces to live in, mainly Germany, Quebec, and the USA. Depending on how my career goes and my opportunities at the time, I might make a move.
+
+For the first **five years** of when I'm ready, I'll choose a tech hub in my location of choice that way I have good opportunities for work. For example, *Berlin* for Germany, *Montreal* for Quebec, or *San Francisco*, USA. If I'm enjoying my lifestyle there and my evaluation of my job chances work well, I'll make the move permanent and continue my career there.
+
+[https://images.unsplash.com/photo-1599946347371-68eb71b16afc]
+
+$$Family$$
+I'm still unsure about my plans for a family. The next decade of my life will bring important decisions that I must make around relationships and other long-term commitments. As my career grows and stabilizes, theres of course a chance that I decide to settle down and even maybe have kids, but nothing is for sure as it depends on many different factors.
+
+$$Finances$$
+I most **definately** want to invest early and save aggressively so I'm prepared for **everything**, especially considering I might move to a new country. Contributing to my RESP and buying stocks, bonds, or even real estate depending on the state of the country are all feasible and important.
+
+For the **fifth to tenth years** I'll keep working on myself to aim for a salary in the range of $80,000-$100,000 as a "mid level" developer. My location and expertise will all be factors and with experience, I can possibly aim to earn even higher.
+
+$$Personal Development$$
+This section is a little unordered, but is very important. For all **10 years**, I plan to continue with my career development and everythnig I mentioned before, but an extra two section.
+
+- Making high level connections
+-- building a personal brand
+-- networking at conferences
+-- adding to tech blogs and open source projects
+
+- Languages
+-- continuing to study French & German, very important if I move.
