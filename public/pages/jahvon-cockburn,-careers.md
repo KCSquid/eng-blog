@@ -1,8 +1,8 @@
 ---
-title: Jahvon Cockburn - Careers
+title: Jahvon Cockburn
 description: Explore Jahvon Cockburn's journey, interests, and aspirations in technology and beyond.
 image: https://kcsquid.xyz/assets/pfp.jpg
-homeSection: "GLD"
+homeSection: "Careers"
 ---
 
 # Home

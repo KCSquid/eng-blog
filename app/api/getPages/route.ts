@@ -10,9 +10,8 @@ export async function GET() {
   const blogPages = filenames.map((name) => {
     const filePath = path.join(dir, name)
     const content = fs.readFileSync(filePath, 'utf-8')
-    // Extract YAML frontmatter
     const match = content.match(/^---\n([\s\S]*?)\n---/)
-    let meta: Record<string, string> = {}
+    const meta: Record<string, string> = {}
     if (match) {
       const lines = match[1].split('\n')
       for (const line of lines) {

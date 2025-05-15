@@ -35,7 +35,7 @@ export default function Home() {
           <div className='flex gap-4 flex-wrap items-center justify-center'>
             {pages.map((page: pageData) => (
               <Link key={page.description} href={`/${page.slug}`} className='w-fit max-w-80 h-fit p-4 py-2 rounded-sm border border-neutral-300 cursor-pointer hover:shadow-sm transition-all duration-300'>
-                <h2 className='font-semibold text-sm'>{page.title}</h2>
+                <h2 className='font-semibold text-sm'>{page.title} {page.homeSection ? ` - ${page.homeSection}` : ""}</h2>
                 <h3 className='font-semibold text-[12px] text-neutral-700'>{page.description}</h3>
               </Link>
             ))}
