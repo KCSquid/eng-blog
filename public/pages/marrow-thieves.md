@@ -2,6 +2,7 @@
 title: The Marrow Thieves
 description: A gripping tale of survival and resilience in a dystopian world.
 image: https://hachette.imgix.net/books/9781913090012.jpg?auto=compress&w=2048&h=1024&fit=crop&fm=jpg
+homeSection: "English"
 ---
 
 # Introduction

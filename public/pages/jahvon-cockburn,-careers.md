@@ -2,6 +2,7 @@
 title: Jahvon Cockburn - Careers
 description: Explore Jahvon Cockburn's journey, interests, and aspirations in technology and beyond.
 image: https://kcsquid.xyz/assets/pfp.jpg
+homeSection: "GLD"
 ---
 
 # Home
@@ -251,13 +252,6 @@ Most jobs in the computer science field allow hybrid or fully remote working. In
 
 $$Potential Stress$$
 Computer science can be a stressful degree to earn and includes stressful work. One stress I might encounter is having tight deadlines and a high workload. Most projects for clients have very strict deadlines as everything needs to be completed for something else. Longer hours and extra pressure to deliver these results well, especially in scenarios where you find bugs, are both common factors to most workers. Keeping up with new and rapidly changing technology is also a common issue. In this new *"era of AI"*, things change a lot. New programming languages, frameworks, and tools are all necessary to stay up to date and be modern so you don't risk losing your job to someone better.
-
-<!---
-Notes to Self:
-
-- Make connections between tabs 2 or 3 to your selected job.
-- Any additional certifications to fulfill the requirements for this job.
---->
 
 # Life Goals - A 10 Year Plan
 $$Introduction$$
