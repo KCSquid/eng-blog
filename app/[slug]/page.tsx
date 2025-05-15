@@ -114,6 +114,14 @@ export default function Home() {
     setSections(sections);
   }, [s]);
 
+  if (s === "404") {
+    return (
+      <div className="flex flex-col gap-2 items-center justify-center w-screen h-screen">
+        <h1 className="text-2xl font-bold">404</h1>
+        <Link href="/" className="text-sm cursor-pointer border border-neutral-300 rounded-sm p-3 py-1 hover:shadow-sm transition-all duration-300">Home</Link>
+      </div>
+    )
+  }
 
   if (!s || !meta.image) {
     return (
@@ -121,15 +129,6 @@ export default function Home() {
         <div className="flex items-center justify-center w-screen h-screen">
           <LoaderCircle className="animate-spin text-neutral-500 w-8 h-8" />
         </div>
-      </div>
-    )
-  }
-
-  if (s === "404") {
-    return (
-      <div className="flex flex-col gap-2 items-center justify-center w-screen h-screen">
-        <h1 className="text-2xl font-bold">404</h1>
-        <Link href="/" className="text-sm cursor-pointer border border-neutral-300 rounded-sm p-3 py-1 hover:shadow-sm transition-all duration-300">Home</Link>
       </div>
     )
   }
@@ -218,26 +217,59 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="w-full h-12"></footer>
+      <footer className="w-screen absolute left-0 h-fit mt-16 bg-neutral-800 flex justify-evenly items-center p-8 rounded-t-3xl gap-4 text-neutral-100">
+        <h1 className="font-semibold">Thanks for reading!</h1>
+        <div className="flex flex-col gap-2 items-center justify-center w-fit">
+          <h1 className="text-sm">See more of my stories</h1>
+          <Link href="/" className='w-full items-center justify-center flex h-fit p-4 py-2 rounded-sm border border-neutral-300 cursor-pointer hover:bg-white hover:text-black transition-all duration-300'>
+            <h2 className='font-semibold text-sm'>Home</h2>
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }
 
 function Category({ name }: { name: string }) {
-  return (
-    <div className="flex flex-col w-full gap-3 group hover:cursor-pointer" onClick={() => {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
       const section = document.getElementById(`section-${name}`);
-      if (!section) return;
-      const topOffset = section.getBoundingClientRect().top + window.scrollY - 12;
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
-    }}>
+      if (!section) return setActive(false);
+
+      const rect = section.getBoundingClientRect();
+      setActive(rect.top <= 80 && rect.bottom > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [name]);
+
+  return (
+    <div
+      className={`flex flex-col w-full gap-3 group hover:cursor-pointer ${active ? "font-bold text-black" : ""}`}
+      onClick={() => {
+        const section = document.getElementById(`section-${name}`);
+        if (!section) return;
+        const topOffset = section.getBoundingClientRect().top + window.scrollY - 12;
+        window.scrollTo({ top: topOffset, behavior: "smooth" });
+      }}
+    >
       <div className="flex items-center justify-between">
         <h1 className="text-base font-semibold">{name}</h1>
-        <ArrowRight className="-translate-x-2 group-hover:translate-x-0 transition-transform duration-300" />
+        <ArrowRight className={`-translate-x-2 group-hover:translate-x-0 transition-transform duration-300 ${active ? "text-black" : ""}`} />
       </div>
-      <div className={`w-1/10 h-[1.5px] bg-black group-hover:w-full transition-all duration-300`}></div>
+      <div
+        className={`h-[1.8px] transition-all duration-300 group-hover:w-full ${active ? "w-2/10" : "w-1/10"}`}
+        style={{
+          background: active ? "linear-gradient(to right, rgb(223, 115, 223), rgb(83, 83, 238))" : "black"
+        }}
+      ></div>
     </div>
-  )
+  );
 }
 
 function Section({ title, children, id }: { title: string, children: ReactNode, id: string }) {

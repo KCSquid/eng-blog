@@ -6,12 +6,12 @@ image: https://kcsquid.xyz/assets/pfp.jpg
 
 # Home
 $$All About Me$$
-Hey, welcome to my personal blog site for my civics & careers class. My name is Jahvon Cockburn, I am 15 years old and I'm attending high school in grade 10. Growing up in multiple cities, I've been exposed to multiple languages (mainly both English and French) through diverse environments. These expierences have enriched my background and given me the opportunity to find new interests and turn me into who I am today. My biggest interest, computers, started early in my life during just the second grade. The computer program by MIT, "Scratch", sparked a deep enthusiasm for coding that continues to grow as I get older and learn more. I learn best with visual and kinesthetic styles, which help me at my very motivated, curious, and opportunistic personality. I aim to continue to grow personally and academically in the coming years.
+Hey, welcome to my personal blog site for my civics & careers class. My name is Jahvon Cockburn, I am 15 years old and I'm attending high school in grade 10. Growing up in multiple cities, I've been exposed to multiple languages (mainly both English and French) through diverse environments. These experiences have enriched my background and given me the opportunity to find new interests and turn me into who I am today. My biggest interest, computers, started early in my life during just the second grade. The computer program by MIT, "Scratch", sparked a deep enthusiasm for coding that continues to grow as I get older and learn more. I learn best with visual and kinesthetic styles, which help me with my very motivated, curious, and opportunistic personality. I aim to continue to grow personally and academically in the coming years.
 
 [https://images.unsplash.com/photo-1488590528505-98d2b5aba04b]
 
 $$Personality$$
-After taking the Myers-Briggs 16 Personalities test, I have concluded that I have the type ENTP-A (Assertive, Extraverted, Intuitive, Thinking, Perceiving). Intellectual and creative problem solving challenges are all very enjoyable for me, and help me thrive to become better, especially when related to technology (or more specifically coding). Sharing my ideas is easy for me with my natural outgoing and confident nature, but it may lead to me being **too** passionate or blunt when I debate with others. I'm always energetic and enthusiastic when faced with new challenges or ideas, but if I'm **overly** passionate, I'll come off as insensitive about some topics. Overall, I find great strength that prepare me for my future innovtive, strategical, and creative careers, but I also know my weaknesses and how I can work on myself. 
+After taking the Myers-Briggs 16 Personalities test, I have concluded that I have the type ENTP-A (Assertive, Extraverted, Intuitive, Thinking, Perceiving). Intellectual and creative problem solving challenges are all very enjoyable for me, and help me thrive to become better, especially when related to technology (or more specifically coding). Sharing my ideas is easy for me with my natural outgoing and confident nature, but it may lead to me being **too** passionate or blunt when I debate with others. I'm always energetic and enthusiastic when faced with new challenges or ideas, but if I'm **overly** passionate, I'll come off as insensitive about some topics. Overall, I find great strength that prepares me for my future innovative, strategical, and creative careers, but I also know my weaknesses and how I can work on myself. 
 
 $$Interests & Hobbies$$
 I have a lot of interests! People that know me well understand that I dabble in all sorts of skills, making me a very well rounded person, but like every other human, I have some focus.
@@ -94,7 +94,7 @@ $$Brief Note$$
 I'll follow a very similar structure to pathway one in terms of sections and wording, with my individual information updated.
 
 $$High School Courses$$
-For law school (unlike other majors like computer science), there is no "pre-law" required courses. Some courses are very helpful for my foundations and acceptance to universities for my undergraduate degree (only requirement).
+For law school (unlike other majors like computer science), there are no "pre-law" required courses. Some courses are very helpful for my foundations and acceptance to universities for my undergraduate degree (only requirement).
 - English (ENG4U) – required for high school graduation (and therefore university admission). Critical for:
 -- writing, reading comprehension, and argument structure.
 - Canadian and World Studies (eg., Civics [this!], History, Law) – helpful for my understanding of society, the government, and legal systems. Important skills made:
@@ -174,10 +174,16 @@ Here are two examples of scholarships/bursaries/grants I would be eligible for. 
 1. **BBPA National Scholarship Fund**  
 "One of such programs, the BBPA National Scholarship Program (NSP) was established in 1986 and is dedicated to supporting and promoting the achievement of academic excellence by Black Canadian youth through an annual scholarship program. It was borne out of the need to reduce the rate at which Black students drop out of school despite their rising intellect, due to unavailability of funds." Read more at <BBPA.org | https://bbpa.org/bbpa-scholarships/>.
 
-1. **Toronto Community Housing Scholarship Program**  
+2. **Toronto Community Housing Scholarship Program**  
 As a resident in the GTA, this scholarship could be useful to me: "We believe that giving young residents the opportunity to attend a postsecondary education or training institution will empower them to become young leaders who will improve their communities." Read more at <Toronto Community Housing | https://torontohousing.ca/programs-and-tenant-engagement/scholarships>.
 
-*Both of these amazing opportunities are useful and available to me should I need them.*
+3. **TD Scholarships for Community Leadership**  
+"Since 1995, TD has awarded millions in TD Scholarships for Community Leadership to recognize students who have demonstrated an outstanding commitment to community leadership. TD Scholarships for Community Leadership recipients receive up to $70,000 for tuition and living expenses as well as opportunities for paid summer employment, peer networking and mentorship." Learn more at <TD Scholarships for Community Leadership | https://www.td.com/ca/en/personal-banking/solutions/student-banking/community-leadership-scholarship-for-canadians>.
+
+4. **Schulich Leader Scholarships**  
+"Schulich Leader Scholarships are Canada’s most coveted undergraduate STEM scholarships. One hundred are awarded to entrepreneurial-minded high school graduates enrolling in a Science, Technology, Engineering or Math program at 20 partner universities across Canada." Learn more at <Schulich Leaders | https://schulichleaders.com/>.
+
+*All of these amazing opportunities are useful and available to me should I need them.*
 
 [https://images.unsplash.com/photo-1676278746109-b65a60f393b0]
 
@@ -214,7 +220,7 @@ $$Duties$$
 As a software engineer or developer, my main duties would vary depending on the company and field, but in general they would include:
 
 - Designing, writing, and testing the code for applications, websites, or systems.
-- Working with others on a team to define project reqiurements and affectively create strong solutions for clients.
+- Working with others on a team to define project requirements and effectively create strong solutions for clients.
 - Debugging and troubleshooting my own or other people's code.
 - Keeping up to date with new (work related) technology and frameworks to be modern.
 - Mentoring junior developers (new workers) if I have high levels of experience.
@@ -244,7 +250,7 @@ Most jobs in the computer science field allow hybrid or fully remote working. In
 [https://images.unsplash.com/photo-1497032628192-86f99bcd76bc]
 
 $$Potential Stress$$
-Computer science can be a stressful degree to earn and includes stressful work. One stress I might encounter is having tight deadlines and a high workload. Most projects for clients have very strict deadlines as everything needs to be completed for something else. Longer hours and extra pressure to deliver these results well, especially in scenarios where you find bugs, are both common factors to most workers. Keeping up with new and rapidly changing technology is also a common issue. In this new *"era of AI"*, things change a lot. New programming langauges, frameworks, and tools are all necessary to stay up to date and be modern so you don't risk losing your job to someone better.
+Computer science can be a stressful degree to earn and includes stressful work. One stress I might encounter is having tight deadlines and a high workload. Most projects for clients have very strict deadlines as everything needs to be completed for something else. Longer hours and extra pressure to deliver these results well, especially in scenarios where you find bugs, are both common factors to most workers. Keeping up with new and rapidly changing technology is also a common issue. In this new *"era of AI"*, things change a lot. New programming languages, frameworks, and tools are all necessary to stay up to date and be modern so you don't risk losing your job to someone better.
 
 <!---
 Notes to Self:
@@ -260,27 +266,27 @@ Now that you know all about me and how I'm planning out my future, I've devised 
 $$Career$$
 For the first **one to three years** of my career, I'll be a junior developer. This just means I'm new to the field and have much to learn from others. I aim to work at a tech company (or startup if logical), focusing on building my skills in the most modern technologies so I'm future-ready. Working with teams, building projects, and learning new tools will all give me **important** real world experience that is required for my sustainable future. Depending on where I am in a few years, I'll decide between front-end or back-end coding, or even both if I can handle it.
 
-After those years, at approximately **three to six years** into my future, I'll be a "mid level" developer where I've gained some expierence and I'm ready to jump into more responsibilities and opportunities. I'll focus on continuing to build my portfolio and do hackathons to build a resume.
+After those years, at approximately **three to six years** into my future, I'll be a "mid level" developer where I've gained some experience and I'm ready to jump into more responsibilities and opportunities. I'll focus on continuing to build my portfolio and do hackathons to build a resume.
 
 My years of preparation before will make me ready for my highest level of work where I'll be a sort of "specialist" or "senior" as most people call it (**six to 10 years**). I'll be working on larger scale projects and likely leading a team (or a few).
 
 $$Travel$$
 I do love Canada, but I might not necessarily want to live here forever. Over the years I've considered different countries or provinces to live in, mainly Germany, Quebec, and the USA. Depending on how my career goes and my opportunities at the time, I might make a move.
 
-For the first **five years** of when I'm ready, I'll choose a tech hub in my location of choice that way I have good opportunities for work. For example, *Berlin* for Germany, *Montreal* for Quebec, or *San Francisco*, USA. If I'm enjoying my lifestyle there and my evaluation of my job chances work well, I'll make the move permanent and continue my career there.
+For the first **five years** of when I'm ready, I'll choose a tech hub in my location of choice so that I have good opportunities for work. For example, *Berlin* for Germany, *Montreal* for Quebec, or *San Francisco*, USA. If I'm enjoying my lifestyle there and my evaluation of my job chances work well, I'll make the move permanent and continue my career there.
 
 [https://images.unsplash.com/photo-1599946347371-68eb71b16afc]
 
 $$Family$$
-I'm still unsure about my plans for a family. The next decade of my life will bring important decisions that I must make around relationships and other long-term commitments. As my career grows and stabilizes, theres of course a chance that I decide to settle down and even maybe have kids, but nothing is for sure as it depends on many different factors.
+I'm still unsure about my plans for a family. The next decade of my life will bring important decisions that I must make around relationships and other long-term commitments. As my career grows and stabilizes, there's of course a chance that I decide to settle down and even maybe have kids, but nothing is for sure as it depends on many different factors.
 
 $$Finances$$
-I most **definately** want to invest early and save aggressively so I'm prepared for **everything**, especially considering I might move to a new country. Contributing to my RESP and buying stocks, bonds, or even real estate depending on the state of the country are all feasible and important.
+I most **definitely** want to invest early and save aggressively so I'm prepared for **everything**, especially considering I might move to a new country. Contributing to my RESP and buying stocks, bonds, or even real estate depending on the state of the country are all feasible and important.
 
 For the **fifth to tenth years** I'll keep working on myself to aim for a salary in the range of $80,000-$100,000 as a "mid level" developer. My location and expertise will all be factors and with experience, I can possibly aim to earn even higher.
 
 $$Personal Development$$
-This section is a little unordered, but is very important. For all **10 years**, I plan to continue with my career development and everythnig I mentioned before, but an extra two section.
+This section is a little unordered, but is very important. For all **10 years**, I plan to continue with my career development and everything I mentioned before, but with an extra two sections.
 
 - Making high level connections
 -- building a personal brand
