@@ -134,7 +134,7 @@ export default function Home() {
   }
 
   return (
-    <div className="w-screen h-screen p-12">
+    <div className="w-full h-full lg:p-16 p-12">
       <main className="flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
@@ -143,7 +143,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <Image src={meta.image} unoptimized width={2048} height={1024} alt="title image" className="w-full aspect-video object-center object-cover rounded-sm border border-neutral-300" />
+          <Image src={meta.image} unoptimized width={1920} height={1080} alt="title image" className="w-full aspect-video object-center object-cover rounded-sm border border-neutral-300" />
         </div>
         <div className="flex jusify-between w-full gap-12">
           <div className="sm:flex hidden flex-col gap-3 min-w-1/3 sticky self-start top-12">
@@ -169,9 +169,9 @@ export default function Home() {
                         case "image":
                           if (elements[i + 1]?.type === "image") {
                             result.push(
-                              <div className="flex gap-4 my-4" key={`images-row-${index}-${i}`}>
-                                <BlogImage key={`${index}-${i}`} src={element.value} />
-                                <BlogImage key={`${index}-${i + 1}`} src={elements[i + 1].value} />
+                              <div className="flex sm:flex-row flex-col gap-4 my-4" key={`images-row-${index}-${i}`}>
+                                <BlogImage key={`${index}-${i}`} src={element.value} double />
+                                <BlogImage key={`${index}-${i + 1}`} src={elements[i + 1].value} double />
                               </div>
                             );
                             i += 2;
@@ -217,8 +217,15 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="w-screen absolute left-0 h-fit mt-16 bg-neutral-800 flex justify-evenly items-center p-8 rounded-t-3xl gap-4 text-neutral-100">
-        <h1 className="font-semibold">Thanks for reading!</h1>
+      <footer className="w-full absolute left-0 h-fit mt-16 bg-neutral-800 flex justify-evenly items-center p-8 rounded-t-3xl gap-4 text-neutral-100">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="font-semibold">Thanks for reading!</h1>
+          <button className="text-sm cursor-pointer text-neutral-400" onClick={() => window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+          })}>Back to top?</button>
+        </div>
         <div className="flex flex-col gap-2 items-center justify-center w-fit">
           <h1 className="text-sm">See more of my stories</h1>
           <Link href="/" className='w-full items-center justify-center flex h-fit p-4 py-2 rounded-sm border border-neutral-300 cursor-pointer hover:bg-white hover:text-black transition-all duration-300'>
@@ -300,8 +307,8 @@ function Jotnote({ children, doubleIndent }: { children: ReactNode; doubleIndent
   );
 }
 
-function BlogImage({ src }: { src: string }) {
+function BlogImage({ src, double }: { src: string; double?: boolean }) {
   return (
-    <Image src={src} unoptimized width={2048} height={1024} alt="me" className="w-full aspect-video object-top object-cover rounded-sm border border-neutral-300 my-4" />
+    <Image src={src} unoptimized width={1920} height={1080} alt="me" className={`${double ? "sm:w-1/2 w-full" : "w-full my-4"} aspect-video object-top object-cover rounded-sm border border-neutral-300`} />
   )
 }

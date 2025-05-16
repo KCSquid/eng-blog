@@ -163,6 +163,8 @@ __~$16,250+ per year__
 **Total cost for Law**
 __~$37,750 per year__
 
+*Keep in mind that law includes an **extra** school so fees are obviously significantly more*
+
 $$Payment$$
 As you can see, both programs can be very expensive, especially law. I plan to pay for most of my postsecondary opportunity costs with an RESP that my parents have started and funded for me. I also aim for a scholarship if possible if I get the opportunity to receive one.
 
@@ -275,7 +277,7 @@ $$Family$$
 I'm still unsure about my plans for a family. The next decade of my life will bring important decisions that I must make around relationships and other long-term commitments. As my career grows and stabilizes, there's of course a chance that I decide to settle down and even maybe have kids, but nothing is for sure as it depends on many different factors.
 
 $$Finances$$
-I most **definitely** want to invest early and save aggressively so I'm prepared for **everything**, especially considering I might move to a new country. Contributing to my RESP and buying stocks, bonds, or even real estate depending on the state of the country are all feasible and important.
+I most **definitely** want to invest early and save aggressively so I'm prepared for **everything**, especially considering I might move to a new country. Contributing to my RRSP (if I plan to stay in Canada) and buying stocks, bonds, or even real estate depending on the state of the country are all feasible and important.
 
 For the **fifth to tenth years** I'll keep working on myself to aim for a salary in the range of $80,000-$100,000 as a "mid level" developer. My location and expertise will all be factors and with experience, I can possibly aim to earn even higher.
 
