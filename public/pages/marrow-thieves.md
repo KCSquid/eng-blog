@@ -27,6 +27,31 @@ Frenchie encounters difficulties all throughout his story as he journeys up towa
 
 This book presents many minor themes though it follows one large one: the ongoing and past __exploitation__ and __genocide__ of the Indigenous people. This book highlights the importance of preserving your $$cultures$$ and $$traditions$$ even through hardship. This novel provides a powerful testament to the endurance of the human spirit, especially historically the Indigenous communities and their unwavering hope for a future where everyone is equal and dreams can *really come true*.
 
+# An Interview with Frenchie
+I’ve decided I want to Frenchie because he is the main character and *obviously* there is the most information on him. My interview is like Dateline as it feels most natural to me and is best for an open-ended interview. Since Frenchie isn't really here right now, I'll show my questions and leave his answers out separately.
+
+$$Interview$$
+Welcome and thank you so much for joining me today and asking all the questions we’ve been dying to hear. We really feel your perspective will make a big impact on us and the background of the story.
+
+1. The Marrow Trade, the biggest theme of the book, was witnessed firsthand by you. What can you tell us about the **emotional** and **psychological** toll it took on you __and__ your community?
+
+2. I would think Miigwans serves as a father figure to you and an obvious leader in your group. Do you agree with this?
+- Follow up: How has the guidance and wisdom he's shared help you to understand more about your heritage and constant fight?
+
+3. We've all seen the impact Rose has in your life with your relationship evolving throughout the book. Has (and how has) she impacted your understanding of various topics like love and loss along with a connection with someone else being important in an otherwise lonely world?
+
+4. Your journey had allies and enemies through various points of the book. What factors lead you to understand who you can trust?
+- Follow up: When you've been tricked into trusting an enemy, what lessons have you learned from them?
+
+5. What would you say was the main driving factor for your fight for survival. Obviously it's to stay alive but more than that, what do *you* want?
+- Follow up: What would you be willing to sacrifice for your dream?
+
+6. For the other people who aren't indigenous, what do you think is the most important thing for people to understand?
+
+7. Looking into the future, what message do you hope your story brings towards the future children about resilience and the importance of preserving your culture?
+
+Thank you for answering these. Your insight is invaluable. Good luck on your journey!
+
 # Why you should read this book
 Hello readers around the world, my job here today is to talk to you about a book I really love with a message that will stay with you long after you finish it, The Marrow Thieves. The Marrow Thieves is a book by Cherie Dimaline about a future with environmental disaster caused by humans with the consequence that their dreaming has been lost, all except by the indigenous. After research, they discovered the only way to bring back the dreaming is to hunt down the indigenous for their bone marrow, holding the key to restoring dreams.
 
