@@ -43,6 +43,15 @@ export default function Home() {
     image: "",
   });
 
+  const [duoStreak, setDuoStreak] = useState<number>(0);
+
+  useEffect(() => {
+    const startTimestamp = 1651896000000;
+    const now = Date.now();
+    const days = Math.floor((now - startTimestamp) / (1000 * 60 * 60 * 24));
+    setDuoStreak(days + 1);
+  }, [])
+
   useEffect(() => {
     const frontmatterRegex = /^---\s*([\s\S]*?)\s*---/;
     const match = s.match(frontmatterRegex);
@@ -64,7 +73,7 @@ export default function Home() {
     setMeta({ title, description, image });
 
     const headerMatch = /# (.+)/g;
-    const urlMatch = /<+([^|]+)\s*\|\s*(https?:\/\/[^>]+)>/g;
+    const urlMatch = /<+([^|]+)\s*\|\s*(.*\/[^>]+)>/g;
     const boldMatch = /\*\*(.*?)\*\*/g;
     const italicMatch = /\*(.*?)\*/g;
     const underscoreMatch = /__(.*?)__/g;
@@ -78,7 +87,7 @@ export default function Home() {
       const sectionContent = content.slice(start, end).trim();
 
       const elements = sectionContent.split("\n").map((line) => {
-        line = line.trim();
+        line = line.trim().replace("[DUO STREAK]", duoStreak.toString());
         if (!line) return null;
         if (line.startsWith("[")) {
           return { type: "image", value: line.slice(1, -1) || "" };
@@ -112,7 +121,7 @@ export default function Home() {
     });
 
     setSections(sections);
-  }, [s]);
+  }, [s, duoStreak]);
 
   if (s === "404") {
     return (

@@ -30,7 +30,7 @@ Fluent in:
 - Engineering, crafting, building, etc.
 - Biking, walking, swimming and all active outdoors activities
 - Volunteering in any way I can. (Hoping to build as many hours as I can for fun!)
-- Language learning (1100+ day streak on Duolingo). Currently exploring German and improving my French.
+- Language learning ([DUO STREAK] day streak on Duolingo). Currently exploring German and improving my French.
 
 $$Awards and Certifications$$
 - 🏆 Solo Hackathon Winner – I won my school's first ever hackathon in grade six, standing out from the competition. I won a brand new Raspberry Pi 4 which I continue to use often for side-projects.
