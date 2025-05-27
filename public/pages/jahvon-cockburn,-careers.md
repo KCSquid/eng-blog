@@ -66,6 +66,8 @@ There is a $156 base fee for OUAC, 3 programs.
 For more choices, it will cost $50 per each.
 Other universities (eg. UWaterloo) may charge an additional fee depending on faculty (popularity).
 
+Prices are always updated at <OUAC.ca | https://www.ouac.on.ca/guide/undergrad-fees/>
+
 $$Dates & Deadlines$$
 The default deadline to apply with OUAC is about mid-January and offers begin as early as February, but most likely during the March to May months. I should be responding to offers by early June.
 
@@ -124,6 +126,8 @@ $$Fees?$$
 - LSAT costs ~300 CAD per attempt.
 - Law school applications with OLSAS (similar to OUAC but for law school) - ~$150 base + ~$100 per school.
 - Extra fees may come in for licensing with things like the Bar Exam and articling.
+
+Again, prices for law can be found at <OUAC.ca | https://www.ouac.on.ca/guide/olsas-fees/>
 
 $$Dates & Deadlines$$
 - OUAC - same timing as other programs
