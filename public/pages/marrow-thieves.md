@@ -27,6 +27,23 @@ Frenchie encounters difficulties all throughout his story as he journeys up towa
 
 This book presents many minor themes though it follows one large one: the ongoing and past __exploitation__ and __genocide__ of the Indigenous people. This book highlights the importance of preserving your $$cultures$$ and $$traditions$$ even through hardship. This novel provides a powerful testament to the endurance of the human spirit, especially historically the Indigenous communities and their unwavering hope for a future where everyone is equal and dreams can *really come true*.
 
+# News Report
+$$BREAKING NEWS: Indigenous Group Spotted Near Northern Territory$$
+
+**By Jahvon Cockburn**
+**June 1, 2025**
+A recent development in the bone marrow case has caught the attention of the people in Canada’s Department of Oneirology. A group of Indigenous were sighted reportedly moving through a dense forest within the Northern Territory. An estimated count of 8-10 was likely, observed by surveillance cameras yesterday evening.
+
+The Department confirms two older individuals and several younger members following along. "We have reason to believe these are some of the individuals evading our medical research facilities," stated Dr. Marcus Henderson, head of the Department's Research Division. "Their capture is crucial for continuing our dream restoration program."
+
+Recruiters have been recently dispatched to the area to track the steps of the group, though the dense forest terrain creates challenges through searching. Any suspicious activity in nearby communities is strongly urged to be reported as soon as possible.
+
+"The ability to dream is a fundamental human right," Dr. Henderson added. "These individuals hold the key to restoring this essential function to the rest of humanity. Their cooperation is vital for the greater good."
+
+The Department adds that holding or helping any Indigenous individuals in any way is a felony and will be punished with serious consequences. Updates follow as more is learned about the situation.
+
+*For reporting of Indigenous sightings, contact the Department's hotline at 1-800-DREAMS.*
+
 # An Interview with Frenchie
 I’ve decided I want to Frenchie because he is the main character and *obviously* there is the most information on him. My interview is like Dateline as it feels most natural to me and is best for an open-ended interview. Since Frenchie isn't really here right now, I'll show my questions and leave his answers out separately.
 
