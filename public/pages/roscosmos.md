@@ -20,7 +20,8 @@ It was responsible for some of the world’s most significant *firsts* in space 
 
 These achievements not only advanced space technology but also symbolized Soviet power and innovation during a tense era of global competition.
 
-[https://upload.wikimedia.org/wikipedia/commons/d/d3/Sputnik_1.jpg]
+[https://www.astronomy.com/wp-content/uploads/2023/04/gagarin_vostok1.jpg]
+*Yuri Gagarin (Left) | An old Soviet Rocket Launch (Right)*
 
 # Roscosmos: The Modern Era
 After the **dissolution of the Soviet Union** in **February 1992**, the space program transitioned into **Roscosmos**, officially known as the *Russian Federal Space Agency*, headquartered in $$Moscow$$.  
@@ -33,7 +34,8 @@ It also contributes significantly to scientific research through its satellite p
 - <Bion-M | https://en.wikipedia.org/wiki/Bion_(satellite)> series for $$space medicine$$  
 - <Elektro–L | https://en.wikipedia.org/wiki/Elektro%E2%80%93L> series for $$meteorological research$$
 
-[/roscosmos-logo.png]
+[https://www.advanced-television.com/wp-content/uploads/2022/07/roscosmos.jpg]
+*One of Roscosmos' Launch Bases*
 
 # Impacts of Rocketry and Space Exploration
 
@@ -57,6 +59,9 @@ The Soviet and Russian space programs have had a massive impact on society:
 - Commercial launch services generate revenue, though **profitability fluctuates** due to maintenance costs and economic instability.  
 - Geopolitical tensions have limited international partnerships, reducing revenue streams and collaborative research opportunities.
 
+[https://upload.wikimedia.org/wikipedia/commons/0/01/%D0%9F%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA_%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%83_%D0%AE.%D0%90.%2C_%D0%AE%D0%B3%D0%BE-%D0%97%D0%B0%D0%BF%D0%B0%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BA%D1%80%D1%83%D0%B3%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg]
+*Monument of Yuri Gagarin in Moscow Russia*
+
 # Inequities in Science
 
 ## How Russia Affects Developing Countries
@@ -73,6 +78,9 @@ $$Negative Impacts$$
 - Operations at **Baikonur Cosmodrome** in Kazakhstan demonstrate an imbalance: Russia benefits economically, while the host country bears environmental costs.  
 - **Sanctions** and political isolation have disrupted partnerships, leaving smaller countries without stable access to space.  
 - Roscosmos tends to focus resources on wealthier partners (e.g., ISS collaborators), limiting assistance to developing programs.
+
+[https://web14.bernama.com/storage/photos/ec32a42c393fb82c5673462ed69f566e68248ef33a163]
+*Vladimir Putin meeting with the Malaysian Prime Minister*
 
 # Conclusion
 From the early triumphs of the Soviet Union to Roscosmos’ ongoing mission, Russia has remained a **key figure in global space exploration**. Its innovations inspired the world, reshaped international relations, and propelled scientific advancement.  
