@@ -9,7 +9,7 @@ export async function GET() {
 
   const blogPages = filenames.map((name) => {
     const filePath = path.join(dir, name)
-    const content = fs.readFileSync(filePath, 'utf-8')
+    const content = fs.readFileSync(filePath, 'utf-8').replaceAll("\r", "")
     const match = content.match(/^---\n([\s\S]*?)\n---/)
     const meta: Record<string, string> = {}
     if (match) {

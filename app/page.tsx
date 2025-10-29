@@ -22,6 +22,7 @@ export default function Home() {
 
     get();
   }, []);
+  console.log(pages);
 
   return (
     <div className="flex w-screen h-screen items-center justify-center lg:px-32 px-12">

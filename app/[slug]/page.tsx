@@ -77,11 +77,22 @@ export default function Home() {
     setMeta({ title, description, image });
 
     const headerMatch = /^# (.+)$/gm;
-    const urlMatch = /<+([^|]+)\s*\|\s*(.*\/[^>]+)>/g;
+    const urlRegex = /<\s*([^|>]+)\s*\|\s*([^>]+)>/g;
     const boldMatch = /\*\*(.*?)\*\*/g;
-    const italicMatch = /\*(.*?)\*/g;
+    const italicMatch = /(^|[^*])\*(?!\*)(.*?)\*(?!\*)/g;
     const underscoreMatch = /__(.*?)__/g;
     const shinyMatch = /\$\$(.*?)\$\$/g;
+
+    const formatInline = (raw: string) => {
+      return raw
+        .replace(urlRegex, (_m, name, url) => {
+          return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${name.trim()}</a>`;
+        })
+        .replace(boldMatch, "<b>$1</b>")
+        .replace(italicMatch, "$1<i>$2</i>")
+        .replace(underscoreMatch, "<u>$1</u>")
+        .replace(shinyMatch, '<span class="shiny">$1</span>');
+    };
 
     const sections: SetStateAction<section[]> = [];
     const headers = [...content.matchAll(headerMatch)];
@@ -99,16 +110,18 @@ export default function Home() {
             return { type: "image", value: line.slice(1, -1) || "" };
           }
           if (line.startsWith("-- ")) {
+            const raw = line.slice(3) || "";
             return {
               type: "jotnote",
-              value: line.slice(3) || "",
+              value: formatInline(raw),
               doubleIndent: true,
             };
           }
           if (line.startsWith("- ")) {
+            const raw = line.slice(2) || "";
             return {
               type: "jotnote",
-              value: line.slice(2) || "",
+              value: formatInline(raw),
               doubleIndent: false,
             };
           }
@@ -118,22 +131,8 @@ export default function Home() {
               value: line.slice(3) || "",
             };
           }
-          if (urlMatch.test(line)) {
-            const replacedLine = line.replace(
-              urlMatch,
-              (_, name, url) =>
-                `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${name.trim()}</a>`
-            );
-            return { type: "paragraph", value: replacedLine };
-          }
 
-          line = line
-            .replace(boldMatch, "<b>$1</b>")
-            .replace(italicMatch, "<i>$1</i>")
-            .replace(underscoreMatch, "<u>$1</u>")
-            .replace(shinyMatch, '<span class="shiny">$1</span>');
-
-          return { type: "paragraph", value: line };
+          return { type: "paragraph", value: formatInline(line) };
         })
         .filter((element): element is element => element !== null);
 
@@ -427,6 +426,13 @@ function Jotnote({
   children: ReactNode;
   doubleIndent?: boolean;
 }) {
+  const content =
+    typeof children === "string" ? (
+      <span dangerouslySetInnerHTML={{ __html: children }} />
+    ) : (
+      children
+    );
+
   return (
     <div className="flex items-start gap-2 ml-6">
       <div
@@ -434,7 +440,7 @@ function Jotnote({
           doubleIndent ? "border-black ml-12" : "bg-black border-transparent"
         }`}
       ></div>
-      <p className="text-sm text-neutral-700 flex-1">{children}</p>
+      <p className="text-sm text-neutral-700 flex-1">{content}</p>
     </div>
   );
 }
