@@ -23,6 +23,9 @@ export default function Home() {
   const [s, setS] = useState<string>("");
   const [sections, setSections] = useState<section[]>([]);
 
+  const [sourceUrls, setSourceUrls] = useState<string[]>([]);
+  const [sourceTitles, setSourceTitles] = useState<Record<string, string>>({});
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`/pages/${slug}.md`);
@@ -82,11 +85,26 @@ export default function Home() {
     const italicMatch = /(^|[^*])\*(?!\*)(.*?)\*(?!\*)/g;
     const underscoreMatch = /__(.*?)__/g;
     const shinyMatch = /\$\$(.*?)\$\$/g;
+    const braceUrlRegex = /\{(https?:\/\/[^}\s]+)\}/g;
+
+    const escapeHtml = (str: string) =>
+      str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+
+    const urlToIndex = new Map<string, number>();
+    const orderedUrls: string[] = [];
 
     const formatInline = (raw: string) => {
       return raw
         .replace(urlRegex, (_m, name, url) => {
           return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${name.trim()}</a>`;
+        })
+        .replace(braceUrlRegex, (_m, url) => {
+          if (!urlToIndex.has(url)) {
+            urlToIndex.set(url, urlToIndex.size + 1);
+            orderedUrls.push(url);
+          }
+          const idx = urlToIndex.get(url)!;
+          return `<sup class="inline-source shiny" data-src="${url}" data-idx="${idx}">[${idx}]</sup>`;
         })
         .replace(boldMatch, "<b>$1</b>")
         .replace(italicMatch, "$1<i>$2</i>")
@@ -143,7 +161,133 @@ export default function Home() {
     });
 
     setSections(sections);
+    setSourceUrls(orderedUrls);
+    setSourceTitles({});
   }, [s, duoStreak]);
+
+  useEffect(() => {
+    if (!sourceUrls.length) return;
+    let mounted = true;
+
+    (async () => {
+      try {
+        const res = await fetch("/api/fetchtitles", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ urls: sourceUrls }),
+        });
+        if (!res.ok) throw new Error("fetch failed");
+        const data = await res.json();
+        if (!mounted) return;
+        setSourceTitles(data.titles || {});
+      } catch {
+        const fallback: Record<string, string> = {};
+        sourceUrls.forEach((u) => (fallback[u] = u));
+        if (mounted) setSourceTitles(fallback);
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, [sourceUrls]);
+
+  useEffect(() => {
+    if (!sourceUrls.length) return;
+
+    let tooltip = document.getElementById(
+      "inline-source-tooltip"
+    ) as HTMLDivElement | null;
+    if (!tooltip) {
+      tooltip = document.createElement("div");
+      tooltip.id = "inline-source-tooltip";
+      tooltip.style.position = "fixed";
+      tooltip.style.padding = "6px 10px";
+      tooltip.style.background = "rgba(18,18,18,0.95)";
+      tooltip.style.color = "white";
+      tooltip.style.borderRadius = "6px";
+      tooltip.style.fontSize = "12px";
+      tooltip.style.boxShadow = "0 6px 18px rgba(0,0,0,0.25)";
+      tooltip.style.pointerEvents = "none";
+      tooltip.style.zIndex = "9999";
+      tooltip.style.transform = "translate(-50%, -8px)";
+      tooltip.style.transition = "opacity 120ms ease, transform 120ms ease";
+      tooltip.style.opacity = "0";
+      document.body.appendChild(tooltip);
+
+      const style = document.createElement("style");
+      style.id = "inline-source-tooltip-styles";
+      style.textContent = `
+        .inline-source { cursor: pointer; user-select: none; }
+        .inline-source:hover { text-decoration: underline; }
+      `;
+      document.head.appendChild(style);
+    }
+
+    const onMouseEnter = (ev: MouseEvent) => {
+      const target = ev.currentTarget as HTMLElement;
+      const url = target.getAttribute("data-src") || "";
+      const idx = target.getAttribute("data-idx") || "";
+      const title = (sourceTitles && sourceTitles[url]) || url;
+      if (!tooltip) return;
+      tooltip.innerHTML = `<div style="font-weight:600;margin-bottom:4px">[${idx}] ${escapeHtml(
+        title
+      )}</div><div style="opacity:0.9;font-size:11px;color:#ddd">${escapeHtml(
+        url
+      )}</div>`;
+      tooltip.style.opacity = "1";
+      const rect = target.getBoundingClientRect();
+      const left = rect.left + rect.width / 2;
+      const top = rect.top + window.scrollY;
+      tooltip.style.left = `${left}px`;
+      const ttRect = tooltip.getBoundingClientRect();
+      const topPos = rect.top - ttRect.height - 10;
+      tooltip.style.top = `${topPos}px`;
+      tooltip.style.transform = "translate(-50%, 0)";
+    };
+
+    const onMouseMove = (ev: MouseEvent) => {
+      const target = ev.currentTarget as HTMLElement;
+      if (!tooltip) return;
+      const rect = target.getBoundingClientRect();
+      const left = rect.left + rect.width / 2;
+      const topPos = rect.top - tooltip.getBoundingClientRect().height - 10;
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top = `${topPos}px`;
+    };
+
+    const onMouseLeave = () => {
+      if (!tooltip) return;
+      tooltip.style.opacity = "0";
+    };
+
+    const onClick = (ev: MouseEvent) => {
+      const target = ev.currentTarget as HTMLElement;
+      const url = target.getAttribute("data-src");
+      if (url) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+    };
+
+    const nodes = Array.from(
+      document.querySelectorAll(".inline-source")
+    ) as HTMLElement[];
+    nodes.forEach((n) => {
+      n.addEventListener("mouseenter", onMouseEnter);
+      n.addEventListener("mousemove", onMouseMove);
+      n.addEventListener("mouseleave", onMouseLeave);
+      n.addEventListener("click", onClick);
+    });
+
+    return () => {
+      nodes.forEach((n) => {
+        n.removeEventListener("mouseenter", onMouseEnter);
+        n.removeEventListener("mousemove", onMouseMove);
+        n.removeEventListener("mouseleave", onMouseLeave);
+        n.removeEventListener("click", onClick);
+      });
+    };
+  }, [sections, sourceTitles, sourceUrls]);
 
   if (s === "404") {
     return (
@@ -458,4 +602,12 @@ function BlogImage({ src, double }: { src: string; double?: boolean }) {
       } aspect-video object-top object-cover rounded-sm border border-neutral-300`}
     />
   );
+}
+function escapeHtml(rawTitle: string): string {
+  return rawTitle
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
