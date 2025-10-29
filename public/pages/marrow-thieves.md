@@ -28,7 +28,7 @@ Frenchie encounters difficulties all throughout his story as he journeys up towa
 This book presents many minor themes though it follows one large one: the ongoing and past __exploitation__ and __genocide__ of the Indigenous people. This book highlights the importance of preserving your $$cultures$$ and $$traditions$$ even through hardship. This novel provides a powerful testament to the endurance of the human spirit, especially historically the Indigenous communities and their unwavering hope for a future where everyone is equal and dreams can *really come true*.
 
 # News Report
-$$BREAKING NEWS: Indigenous Group Spotted Near Northern Territory$$
+## BREAKING NEWS: Indigenous Group Spotted Near Northern Territory
 
 **By Jahvon Cockburn**
 **June 1, 2025**
