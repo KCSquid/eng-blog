@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ titles });
-  } catch (_) {
+  } catch {
     return NextResponse.json({ titles: {} }, { status: 500 });
   }
 }
