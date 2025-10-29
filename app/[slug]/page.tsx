@@ -87,9 +87,6 @@ export default function Home() {
     const shinyMatch = /\$\$(.*?)\$\$/g;
     const braceUrlRegex = /\{(https?:\/\/[^}\s]+)\}/g;
 
-    const escapeHtml = (str: string) =>
-      str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
-
     const urlToIndex = new Map<string, number>();
     const orderedUrls: string[] = [];
 
@@ -238,7 +235,6 @@ export default function Home() {
       tooltip.style.opacity = "1";
       const rect = target.getBoundingClientRect();
       const left = rect.left + rect.width / 2;
-      const top = rect.top + window.scrollY;
       tooltip.style.left = `${left}px`;
       const ttRect = tooltip.getBoundingClientRect();
       const topPos = rect.top - ttRect.height - 10;
