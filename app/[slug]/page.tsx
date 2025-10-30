@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 "use client";
 
 import Image from "next/image";
@@ -544,7 +543,7 @@ export default function Home() {
                 <div className="mt-6 p-4 rounded-sm border border-neutral-300 bg-white">
                   <h3 className="font-semibold mb-2">Sources</h3>
                   <ol className="list-decimal ml-5 space-y-2">
-                    {sourceUrls.map((url, i) => {
+                    {sourceUrls.map((url) => {
                       const title = sourceTitles[url] || url;
                       return (
                         <li
