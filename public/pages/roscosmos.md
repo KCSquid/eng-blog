@@ -47,7 +47,6 @@ As much as rocket launches create positive impacts such as their essentiality to
 - Ocean splashdowns of rocket stages risk contamination of marine environments.
 
 ## Societal Impact
-The Soviet and Russian space programs have had a massive impact on society:
 Due to Russia's massive geopolitical effects as a global superpower and the previous history of the Soviet Union, both space programs have had and continue to have an impact on society. For example during the Cold War:
 - Space achievements became symbols of **national pride** and global influence.  
 - Figures like **Yuri Gagarin** inspired generations, leading many to pursue $$STEM$$ careers in science and engineering.{https://en.sstu.ru}

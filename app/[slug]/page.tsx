@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight, LoaderCircle } from "lucide-react";
-import { SetStateAction, useEffect, useState, ReactNode } from "react";
+import { SetStateAction, useEffect, useState, ReactNode, useRef } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
@@ -25,6 +25,10 @@ export default function Home() {
 
   const [sourceUrls, setSourceUrls] = useState<string[]>([]);
   const [sourceTitles, setSourceTitles] = useState<Record<string, string>>({});
+  const [expandSources, setExpandSources] = useState<boolean>(false);
+
+  const titlesLoaded = useRef(false);
+  const bypassed = useRef(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -176,10 +180,12 @@ export default function Home() {
         if (!res.ok) throw new Error("fetch failed");
         const data = await res.json();
         if (!mounted) return;
+        titlesLoaded.current = true;
         setSourceTitles(data.titles || {});
       } catch {
         const fallback: Record<string, string> = {};
         sourceUrls.forEach((u) => (fallback[u] = u));
+        titlesLoaded.current = false;
         if (mounted) setSourceTitles(fallback);
       }
     })();
@@ -191,6 +197,17 @@ export default function Home() {
 
   useEffect(() => {
     if (!sourceUrls.length) return;
+    if (expandSources) {
+      const nodes = Array.from(
+        document.querySelectorAll(".inline-source")
+      ) as HTMLElement[];
+      nodes.forEach((n) => {
+        n.style.display = "none";
+      });
+      const existingTooltip = document.getElementById("inline-source-tooltip");
+      if (existingTooltip) existingTooltip.style.opacity = "0";
+      return;
+    }
 
     let tooltip = document.getElementById(
       "inline-source-tooltip"
@@ -268,6 +285,7 @@ export default function Home() {
     const nodes = Array.from(
       document.querySelectorAll(".inline-source")
     ) as HTMLElement[];
+    nodes.forEach((n) => (n.style.display = "inline"));
     nodes.forEach((n) => {
       n.addEventListener("mouseenter", onMouseEnter);
       n.addEventListener("mousemove", onMouseMove);
@@ -283,7 +301,24 @@ export default function Home() {
         n.removeEventListener("click", onClick);
       });
     };
-  }, [sections, sourceTitles, sourceUrls]);
+  }, [sections, sourceTitles, sourceUrls, expandSources]);
+
+  function formatAPAInline(title: string): string {
+    const safeTitle = escapeHtml(title);
+    return `${safeTitle.split(" ").slice(0, 3).join(" ")}. (n.d.).`;
+  }
+
+  function replaceInlineSupWithInlineCitation(rawHtml: string): string {
+    if (!rawHtml) return rawHtml;
+    return rawHtml.replace(
+      /<sup[^>]*data-src="([^"]+)"[^>]*>\[[0-9]+\]<\/sup>/g,
+      (_match, url) => {
+        const title = (sourceTitles && sourceTitles[url]) || url;
+        const apa = formatAPAInline(title);
+        return ` <span class="in-text-citation">(<i>${apa}</i>)</span>`;
+      }
+    );
+  }
 
   if (s === "404") {
     return (
@@ -299,11 +334,46 @@ export default function Home() {
     );
   }
 
-  if (!s || !meta.image) {
+  if ((!s || !meta.image) && !bypassed.current) {
     return (
       <div>
-        <div className="flex items-center justify-center w-screen h-screen">
+        <div className="flex flex-col gap-8 items-center justify-center w-screen h-screen">
           <LoaderCircle className="animate-spin text-neutral-500 w-8 h-8" />
+          <div className="flex flex-col gap-2 items-center justify-center">
+            <h3 className="text-sm text-neutral-400">Loading Images</h3>
+            <button
+              className="outline outline-neutral-300 p-2 w-full rounded-sm text-sm text-neutral-400 hover:bg-neutral-300 hover:text-neutral-500 hover:shadow-sm transition-all duration-200 cursor-pointer"
+              onClick={() => {
+                bypassed.current = true;
+                setMeta((m) => ({ ...m }));
+              }}
+            >
+              Enter Early
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!titlesLoaded.current && !bypassed.current) {
+    console.log(!titlesLoaded.current && !bypassed.current);
+    return (
+      <div>
+        <div className="flex flex-col gap-8 items-center justify-center w-screen h-screen">
+          <LoaderCircle className="animate-spin text-neutral-500 w-8 h-8" />
+          <div className="flex flex-col gap-2 items-center justify-center">
+            <h3 className="text-sm text-neutral-400">Loading Sources</h3>
+            <button
+              className="outline outline-neutral-300 p-2 w-full rounded-sm text-sm text-neutral-400 hover:bg-neutral-300 hover:text-neutral-500 hover:shadow-sm transition-all duration-200 cursor-pointer"
+              onClick={() => {
+                bypassed.current = true;
+                setMeta((m) => ({ ...m }));
+              }}
+            >
+              Enter Early
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -345,6 +415,17 @@ export default function Home() {
             {sections.map((section, index) => (
               <Category name={section.title} key={`Category-Index-${index}`} />
             ))}
+            <div className="flex items-center gap-2 mt-4">
+              <input
+                type="checkbox"
+                id="option1"
+                name="choices"
+                value="value1"
+                checked={expandSources}
+                onChange={(e) => setExpandSources(e.target.checked)}
+              />
+              <label htmlFor="option1">Expand Sources</label>
+            </div>
           </div>
           <div className="flex flex-col gap-8 w-full">
             <div className="flex flex-col gap-4">
@@ -392,27 +473,41 @@ export default function Home() {
                           }
                           break;
                         case "paragraph":
-                          result.push(
-                            <Paragraph key={`${index}-${i}`}>
-                              <span
-                                dangerouslySetInnerHTML={{
-                                  __html: element.value,
-                                }}
-                              />
-                            </Paragraph>
-                          );
-                          i += 1;
+                          {
+                            const paragraphHtml = expandSources
+                              ? replaceInlineSupWithInlineCitation(
+                                  element.value
+                                )
+                              : element.value;
+                            result.push(
+                              <Paragraph key={`${index}-${i}`}>
+                                <span
+                                  dangerouslySetInnerHTML={{
+                                    __html: paragraphHtml,
+                                  }}
+                                />
+                              </Paragraph>
+                            );
+                            i += 1;
+                          }
                           break;
                         case "jotnote":
-                          result.push(
-                            <Jotnote
-                              key={`${index}-${i}`}
-                              doubleIndent={element.doubleIndent}
-                            >
-                              {element.value}
-                            </Jotnote>
-                          );
-                          i += 1;
+                          {
+                            const jotHtml = expandSources
+                              ? replaceInlineSupWithInlineCitation(
+                                  element.value
+                                )
+                              : element.value;
+                            result.push(
+                              <Jotnote
+                                key={`${index}-${i}`}
+                                doubleIndent={element.doubleIndent}
+                              >
+                                {jotHtml}
+                              </Jotnote>
+                            );
+                            i += 1;
+                          }
                           break;
                         case "title":
                           result.push(
@@ -443,6 +538,26 @@ export default function Home() {
                   })()}
                 </Section>
               ))}
+
+              {expandSources && sourceUrls.length > 0 && (
+                <div className="mt-6 p-4 rounded-sm border border-neutral-300 bg-white">
+                  <h3 className="font-semibold mb-2">Sources</h3>
+                  <ol className="list-decimal ml-5 space-y-2">
+                    {sourceUrls.map((url, i) => {
+                      const title = sourceTitles[url] || url;
+                      return (
+                        <li
+                          key={url}
+                          className="text-sm text-neutral-700"
+                          dangerouslySetInnerHTML={{
+                            __html: formatAPAHtml(title, url),
+                          }}
+                        />
+                      );
+                    })}
+                  </ol>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -606,4 +721,10 @@ function escapeHtml(rawTitle: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function formatAPAHtml(title: string, url: string): string {
+  const safeTitle = escapeHtml(title);
+  const safeUrl = escapeHtml(url);
+  return `${safeTitle}. (n.d.). Retrieved from <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${safeUrl}</a>`;
 }
