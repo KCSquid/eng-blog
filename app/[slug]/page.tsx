@@ -25,6 +25,7 @@ export default function Home() {
 
   const [sourceUrls, setSourceUrls] = useState<string[]>([]);
   const [sourceTitles, setSourceTitles] = useState<Record<string, string>>({});
+  const [sourceDates, setSourceDates] = useState<Record<string, string>>({});
   const [expandSources, setExpandSources] = useState<boolean>(false);
 
   const titlesLoaded = useRef(false);
@@ -89,20 +90,24 @@ export default function Home() {
     const italicMatch = /(^|[^*])\*(?!\*)(.*?)\*(?!\*)/g;
     const underscoreMatch = /__(.*?)__/g;
     const shinyMatch = /\$\$(.*?)\$\$/g;
-    const braceUrlRegex = /\{(https?:\/\/[^}\s]+)\}/g;
+    const braceUrlRegex = /\{(https?:\/\/[^|}\s]+)(?:\s*\|\s*([^}]+))?\}/g;
 
     const urlToIndex = new Map<string, number>();
     const orderedUrls: string[] = [];
+    const markdownDates: Record<string, string> = {};
 
     const formatInline = (raw: string) => {
       return raw
         .replace(urlRegex, (_m, name, url) => {
           return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${name.trim()}</a>`;
         })
-        .replace(braceUrlRegex, (_m, url) => {
+        .replace(braceUrlRegex, (_m, url, date) => {
           if (!urlToIndex.has(url)) {
             urlToIndex.set(url, urlToIndex.size + 1);
             orderedUrls.push(url);
+          }
+          if (date) {
+            markdownDates[url] = date.trim();
           }
           const idx = urlToIndex.get(url)!;
           return `<sup class="inline-source shiny" data-src="${url}" data-idx="${idx}">[${idx}]</sup>`;
@@ -164,6 +169,7 @@ export default function Home() {
     setSections(sections);
     setSourceUrls(orderedUrls);
     setSourceTitles({});
+    setSourceDates(markdownDates);
   }, [s, duoStreak]);
 
   useEffect(() => {
@@ -182,11 +188,14 @@ export default function Home() {
         if (!mounted) return;
         titlesLoaded.current = true;
         setSourceTitles(data.titles || {});
+        setSourceDates((prev) => ({ ...prev, ...(data.dates || {}) }));
       } catch {
         const fallback: Record<string, string> = {};
         sourceUrls.forEach((u) => (fallback[u] = u));
         titlesLoaded.current = false;
-        if (mounted) setSourceTitles(fallback);
+        if (mounted) {
+          setSourceTitles(fallback);
+        }
       }
     })();
 
@@ -243,10 +252,12 @@ export default function Home() {
       const url = target.getAttribute("data-src") || "";
       const idx = target.getAttribute("data-idx") || "";
       const title = (sourceTitles && sourceTitles[url]) || url;
+      const date = (sourceDates && sourceDates[url]) || "";
+      const dateSuffix = date ? ` • ${escapeHtml(date)}` : "";
       if (!tooltip) return;
       tooltip.innerHTML = `<div style="font-weight:600;margin-bottom:4px">[${idx}] ${escapeHtml(
         title
-      )}</div><div style="opacity:0.9;font-size:11px;color:#ddd">${escapeHtml(
+      )}${dateSuffix}</div><div style="opacity:0.9;font-size:11px;color:#ddd">${escapeHtml(
         url
       )}</div>`;
       tooltip.style.opacity = "1";
@@ -301,11 +312,16 @@ export default function Home() {
         n.removeEventListener("click", onClick);
       });
     };
-  }, [sections, sourceTitles, sourceUrls, expandSources]);
+  }, [sections, sourceTitles, sourceUrls, sourceDates, expandSources]);
 
-  function formatAPAInline(title: string): string {
+  function formatAPAInline(title: string, url?: string): string {
     const safeTitle = escapeHtml(title);
-    return `${safeTitle.split(" ").slice(0, 3).join(" ")}. (n.d.).`;
+    const date = url ? sourceDates[url] : "";
+    const datePart = date ? escapeHtml(date) : "n.d.";
+    const short = safeTitle
+      ? safeTitle.split(" ").slice(0, 3).join(" ")
+      : safeTitle;
+    return `"${short}". (${datePart}).`;
   }
 
   function replaceInlineSupWithInlineCitation(rawHtml: string): string {
@@ -314,7 +330,7 @@ export default function Home() {
       /<sup[^>]*data-src="([^"]+)"[^>]*>\[[0-9]+\]<\/sup>/g,
       (_match, url) => {
         const title = (sourceTitles && sourceTitles[url]) || url;
-        const apa = formatAPAInline(title);
+        const apa = formatAPAInline(title, url);
         return ` <span class="in-text-citation">(<i>${apa}</i>)</span>`;
       }
     );
@@ -545,12 +561,13 @@ export default function Home() {
                   <ol className="list-decimal ml-5 space-y-2">
                     {sourceUrls.map((url) => {
                       const title = sourceTitles[url] || url;
+                      const date = sourceDates[url] || "";
                       return (
                         <li
                           key={url}
                           className="text-sm text-neutral-700"
                           dangerouslySetInnerHTML={{
-                            __html: formatAPAHtml(title, url),
+                            __html: formatAPAHtml(title, url, date),
                           }}
                         />
                       );
@@ -723,8 +740,10 @@ function escapeHtml(rawTitle: string): string {
     .replace(/'/g, "&#39;");
 }
 
-function formatAPAHtml(title: string, url: string): string {
+function formatAPAHtml(title: string, url: string, date: string): string {
   const safeTitle = escapeHtml(title);
   const safeUrl = escapeHtml(url);
-  return `${safeTitle}. (n.d.). Retrieved from <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${safeUrl}</a>`;
+  const datePart = date ? escapeHtml(date) : "n.d.";
+  console.log(datePart);
+  return `${safeTitle}. (${datePart}). Retrieved from <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${safeUrl}</a>`;
 }

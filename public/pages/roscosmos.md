@@ -9,12 +9,12 @@ homeSection: "Physics"
 In this article, I'll be discussing the evolution of the **Russian space programs**, ranging from the Soviet Union predecessor to modern-era **Roscosmos** in Russia. I'll highlight the achievements of both while shining a light on the impacts (both positive and negative) along with the challenges both Russia and other countries face. $$Спасибо$$ ("thank you") for joining me, now let's blast off!
 
 # The Soviet Union Space Program
-The **Soviet Space Program**{https://books.google.com/books?id=O-HnuwEACAAJ} was one of the most ambitious and groundbreaking initiatives in human history. Operating between **1951 and 1991**{https://www.rmg.co.uk/stories/topics/space-race-timeline}, it consisted of multiple design bureaus{https://www.britannica.com/science/space-exploration/Soviet-Union} competing under the broader state-controlled system during the $$Cold War$$.  
+The **Soviet Space Program**{https://books.google.com/books?id=O-HnuwEACAAJ | 2019} was one of the most ambitious and groundbreaking initiatives in human history. Operating between **1951 and 1991**{https://www.rmg.co.uk/stories/topics/space-race-timeline | 2014}, it consisted of multiple design bureaus{https://www.britannica.com/science/space-exploration/Soviet-Union | n.d.} competing under the broader state-controlled system during the $$Cold War$$.  
 
 The Soviet Union was also a pioneer in some of the most significant achievements to mankind. Some examples of these are:
-- First **satellite**, *Sputnik 1* (1957){https://history.state.gov/milestones/1953-1960/sputnik}
-- First **animal** in space, *Laika* (1957){https://www.nasa.gov/history/a-brief-history-of-animals-in-space/}
-- First **human**, *Yuri Gagarin* (1961){https://www.nasa.gov/image-article/april-1961-first-human-entered-space/}
+- First **satellite**, *Sputnik 1* (1957){https://history.state.gov/milestones/1953-1960/sputnik | 2025}
+- First **animal** in space, *Laika* (1957){https://www.nasa.gov/history/a-brief-history-of-animals-in-space/ | 1998}
+- First **human**, *Yuri Gagarin* (1961){https://www.nasa.gov/image-article/april-1961-first-human-entered-space/ | 1961}
 - First **woman**, *Valentina Tereshkova* (1963)
 - First **rover** on the Moon through the *Lunokhod* programme (1970)
 
@@ -24,9 +24,9 @@ Furthermore, during a time of such global competition (Cold War), these technolo
 *Yuri Gagarin (Left) | An old Soviet Rocket Launch (Right)*
 
 # Roscosmos: The Modern Era
-In February of 1992 when the Soviet Union was recently dissolved, Russia founded a new space program, **Roscosmos**—officially known as the *Russian Federal Space Agency*, with headquarters in **Moscow**.{https://www.britannica.com/topic/Roskosmos}
+In February of 1992 when the Soviet Union was recently dissolved, Russia founded a new space program, **Roscosmos**—officially known as the *Russian Federal Space Agency*, with headquarters in **Moscow**.{https://www.britannica.com/topic/Roskosmos | n.d.}
 
-As of now, **Roscosmos'** role in international space exploration is still very important as it's a major partner on the International Space Station (ISS).{https://www.nasa.gov/international-space-station/} The agency is also working on launch systems and satellite programs to innovate solutions for humankind. Some of these systems are:
+As of now, **Roscosmos'** role in international space exploration is still very important as it's a major partner on the International Space Station (ISS).{https://www.nasa.gov/international-space-station/ | 2024} The agency is also working on launch systems and satellite programs to innovate solutions for humankind. Some of these systems are:
 - <Angara | https://en.wikipedia.org/wiki/Angara_(rocket)> – a next-generation modular rocket system  
 - <Soyuz-2 | https://en.wikipedia.org/wiki/Soyuz-2_(rocket)> and the planned <Soyuz-2-3 | https://en.wikipedia.org/w/index.php?title=Soyuz-2-3&action=edit&redlink=1> – upgraded versions of the iconic Soyuz family  
 
@@ -41,16 +41,16 @@ Satellite programs:
 
 ## Environmental Impact
 As much as rocket launches create positive impacts such as their essentiality to exploration, they come with multiple environmental consequences that can be long-lasting. For example:
-- The emissions from launching rockets cause $$CO2$$, soot, and particles of varying sizes into the upper atmosphere or sent down to earth. Small alumina particles or even large metal pieces may linger.{https://newsinteractives.cbc.ca/features/2023/rocket-pollution/}{https://news.climate.columbia.edu/2025/03/04/rockets-affect-atmosphere/}
+- The emissions from launching rockets cause $$CO2$$, soot, and particles of varying sizes into the upper atmosphere or sent down to earth. Small alumina particles or even large metal pieces may linger.{https://newsinteractives.cbc.ca/features/2023/rocket-pollution/ | 2022}{https://news.climate.columbia.edu/2025/03/04/rockets-affect-atmosphere/ | 2025}
 - The **Baikonur Cosmodrome** launches in Kazakhstan (at a Russian base) have caused pollution concerns where **toxic rocket fuel residues** affect local ecosystems and create disruptions in the day-to-day life of locals.  
-- Noise from launches disturbs wildlife in nearby regions (noise pollution).{https://www.nature.com/articles/s43247-024-01963-x}
+- Noise from launches disturbs wildlife in nearby regions (noise pollution).{https://www.nature.com/articles/s43247-024-01963-x | 2024}
 - Ocean splashdowns of rocket stages risk contamination of marine environments.
 
 ## Societal Impact
 Due to Russia's massive geopolitical effects as a global superpower and the previous history of the Soviet Union, both space programs have had and continue to have an impact on society. For example during the Cold War:
 - Space achievements became symbols of **national pride** and global influence.  
 - Figures like **Yuri Gagarin** inspired generations, leading many to pursue $$STEM$$ careers in science and engineering.{https://en.sstu.ru}
-- Technological innovations from space research later enhanced civilian industries.{https://aerospace.org/article/brief-history-space-exploration}
+- Technological innovations from space research later enhanced civilian industries.{https://aerospace.org/article/brief-history-space-exploration | 2018}
 -- Satellite communication systems (eg. for television).
 -- Manufacturing technology (eg. welding)
 $$Roscosmos$$
@@ -59,7 +59,7 @@ $$Roscosmos$$
 
 ## Economic Impact
 - Due to the sheer size of Roscosmos and its related space programs, the space industry is able to provide employment opportunities to thousands of engineers and scientists.
-- Roscosmos is currently operating at a net loss and an extremely high cost (50 Billion Rubles / $730 Million USD){https://jamestown.org/program/the-future-of-roscosmos-unclear-as-challenges-mount/}, but it's able to generate some revenue back with commercial launch services.
+- Roscosmos is currently operating at a net loss and an extremely high cost (50 Billion Rubles / $730 Million USD){https://jamestown.org/program/the-future-of-roscosmos-unclear-as-challenges-mount/ | 2024}, but it's able to generate some revenue back with commercial launch services.
 -- Profitability fluctuates due to maintenance costs and economic instability.
 - Geopolitical tensions in Russia cause limited international partnerships, in turn reducing revenue streams and collaborative research opportunities for Roscosmos.
 -- Similar to the Soviet Union
@@ -73,9 +73,9 @@ $$Roscosmos$$
 Modern space activities from Roscosmos have aided developing nations through collaborations, but simultaneously, accidentally hinder the way they may function in the future.
 
 $$Positive Impacts$$
-- Roscosmos offers **affordable launch services**, giving developing countries access to orbit without building their own launch sites.{https://interfax.com/newsroom/top-stories/92189/}{https://www.globalconstructionreview.com/russia-offers-spaceports-to-friendly-developing-countries/}
+- Roscosmos offers **affordable launch services**, giving developing countries access to orbit without building their own launch sites.{https://interfax.com/newsroom/top-stories/92189/ | 2023}{https://www.globalconstructionreview.com/russia-offers-spaceports-to-friendly-developing-countries/ | 2025}
 - It provides **training opportunities** for astronauts and engineers from emerging nations.
-- Historical cooperation with countries like **India** advanced their independent space programs.{https://indianembassy-moscow.gov.in/pdf/Delhi-October-05--2018-page-28.pdf}
+- Historical cooperation with countries like **India** advanced their independent space programs.{https://indianembassy-moscow.gov.in/pdf/Delhi-October-05--2018-page-28.pdf | n.d.}
 
 $$Negative Impacts$$
 - Russia’s **dominance in launch services** can create dependency rather than fostering self-reliance.  
@@ -90,3 +90,4 @@ $$Negative Impacts$$
 From the Soviet Union's early triumphs in space, to the ongoing mission with **Roscosmos**, Russia has always remained a key figure in global space exploration, looked up to by many aspiring countries. The innovations and innovators it produces inspire the world and have reshaped international relations.
 
 As technology evolves and environmental awareness becomes more of a key focus, Russia's ongoing challenge will be to ensure that its space exploration doesn't get in the way of the planet, serving humanity while making responsible decisions. Russia serves as a reminder that the dream of reaching the stars must always stay grounded in our care for the world.
+
