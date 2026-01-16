@@ -38,6 +38,19 @@ export default function Home() {
         <div className="flex flex-col gap-4 items-center justify-center">
           <h1 className="font-bold text-2xl">Pages</h1>
           <div className="flex gap-4 flex-wrap items-stretch justify-center h-fit">
+            <Link
+              href="/fn-water"
+              className="w-fit max-w-80 p-4 py-4 rounded-sm border border-blue-300 cursor-pointer hover:shadow-md transition-all duration-300 bg-blue-50"
+            >
+              <h2 className="font-semibold text-sm text-blue-900">
+                The Price of Gold: Canada’s Ongoing First Nations Water Crisis
+                <span className="text-neutral-500"> - English</span>
+              </h2>
+              <h3 className="font-semibold text-[12px] text-neutral-700">
+                An in-depth look at the ongoing water crisis affecting First
+                Nations communities in Canada.
+              </h3>
+            </Link>
             {pages.map((page: pageData) => (
               <Link
                 key={page.slug}
