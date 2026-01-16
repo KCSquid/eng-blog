@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, EB_Garamond } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const sans = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const serif = EB_Garamond({
+  subsets: ["latin"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -18,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${sans.variable} ${serif.variable} antialiased`}>
         {children}
       </body>
     </html>
